@@ -1,0 +1,32 @@
+<div>
+  <oj-sp-advanced-create-edit id="oj_ssce1" page-title="Invoice Backup" page-subtitle="Create the Backup Documentation"
+    avatar="{{$page.variables.avatar}}" display-options.go-to-parent="{{$page.variables.goToParentOption }}"
+    display-options.contextual-info-sticky="{{ $page.variables.contextualInfoSticky }}"
+    display-options.contextual-info-label="{{$page.variables.contextualInfoLabelVisible}}"
+    display-options.responsive-padding="on" display-options.bottom-actions="on"
+    display-mode="[[$page.variables.displayMode]]" primary-action.label="Submit"
+    on-sp-primary-action="[[$listeners.ojSsce1SpPrimaryAction2]]" >
+    <oj-sp-vertical-anchor-navigator layout="containerLayout1"
+      layout-provider="[[ $metadata.dynamicContainerMetadata.provider ]]" slot="main"></oj-sp-vertical-anchor-navigator>
+  </oj-sp-advanced-create-edit>
+  <oj-dialog dialog-title="Request Submitted" id="oj-dialog--106137069-1">
+    <div slot="body">
+      <div class="oj-flex-bar oj-sm-align-items-center">
+        <div class="oj-flex-bar-start">
+          <oj-bind-text
+            value="You requested has been submitted. You will be notified at the below email upon completion."></oj-bind-text>
+        </div>
+      </div>
+      <div class="oj-flex">
+        <div class="oj-flex-item oj-sm-12 oj-md-2">
+          <oj-bind-text value="{{ $variables.email }}"></oj-bind-text>
+        </div>
+      </div>
+    </div>
+    <div slot="footer">
+      <oj-button on-oj-action="[[$listeners.buttonAction2]]">Close</oj-button>
+    </div>
+  </oj-dialog>
+  <oj-sp-message-unsaved-changes id="dirtyDataWarningDialog" open-dialog="[[ $page.variables.dirtyDialogOpen ]]"
+    on-oj-sp-discard-changes="[[ $listeners.confirmYesOjAction ]]" on-oj-sp-cancel="[[ $listeners.confirmNoOjAction ]]"></oj-sp-message-unsaved-changes>
+</div>

@@ -1,0 +1,40 @@
+<div>
+  <div class="oj-flex">
+    <div class="oj-flex-item oj-sm-12 oj-md-7"></div>
+    <oj-buttonset-one class="oj-flex-item oj-sm-12 oj-md-2" chroming="borderless"
+      on-value-changed="[[$listeners.buttonsetValue]]">
+      <oj-option value="option1">Invoice Backup</oj-option>
+    </oj-buttonset-one>
+    <oj-buttonset-one class="oj-flex-item oj-sm-12 oj-md-2" chroming="borderless">
+      <oj-option value="option1">Invoice Search</oj-option>
+    </oj-buttonset-one>
+  </div>
+  <oj-sp-dashboard-landing-page id="oj-sp-dashboard-page-1" primary-action="[[ $page.variables.primaryAction]]"
+    page-title="Invoice Dashboard">
+    <oj-bind-if test="[[ $page.variables.kpisArray.length > 0 ]]">
+      <oj-sp-scoreboard slot="kpi" id="oj-sp-scoreboard-1" data="[[$page.variables.kpisADP]]"
+        selection="{{ $variables.selectedKpi }}" selection-mode="single"></oj-sp-scoreboard>
+    </oj-bind-if>
+    <oj-switcher id="kpi-switcher" value="[[ $page.variables.selectedKpi ]]">
+      <oj-defer slot="KPI_1_id" >
+        <oj-sp-dashboard-grid layout="[[ $page.variables.layout ]]">
+          <oj-sp-dashboard-panel panel-title="US Business Unit" slot="search">
+            <oj-table scroll-policy="loadMoreOnScroll" data="[[$variables.invoiceDataListSDP]]"
+              columns='[{"headerText":"Business Unit","field":"businessUnit"},{"headerText":"Contract","field":"contract"},{"headerText":"timesheets_available","field":"timesheetsAvailable"},{"headerText":"expensesRecordsAvailable","field":"expensesRecordsAvailable"}]'></oj-table>
+          </oj-sp-dashboard-panel>
+        </oj-sp-dashboard-grid>
+      </oj-defer>
+      <oj-defer slot="KPI_2_id" >
+        <oj-sp-dashboard-grid layout="[[ $variables.layout ]]">
+          <oj-sp-dashboard-panel panel-title="CAN Business Unit" slot=""></oj-sp-dashboard-panel>
+        </oj-sp-dashboard-grid>
+      </oj-defer>
+      <oj-defer slot="KPI_3_id" >
+        <oj-sp-dashboard-grid layout="[[ $variables.layout ]]">
+          <oj-sp-dashboard-panel panel-title="Intelli BU" slot=""></oj-sp-dashboard-panel>
+        </oj-sp-dashboard-grid>
+      </oj-defer>
+    </oj-switcher>
+    <oj-sp-smart-search slot="search"></oj-sp-smart-search>
+  </oj-sp-dashboard-landing-page>
+</div>

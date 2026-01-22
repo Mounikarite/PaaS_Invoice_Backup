@@ -1,0 +1,45 @@
+{
+  "layoutTypes": {
+    "businessObjects": {
+      "kind": "operationRef",
+      "serviceId": "businessObjects",
+      "operations": [
+        "getall_InvoiceData"
+      ]
+    }
+  },
+  "layouts": {
+    "isDefault": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "data": {
+      "type": "businessObjects",
+      "layoutType": "table",
+      "label": "Data",
+      "rules": [
+        "isDefault"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "table",
+          "layout": {
+            "displayProperties": [
+              "businessUnit",
+              "contract",
+              "createdBy",
+              "creationDate",
+              "expensesRecordsAvailable",
+              "invoiceFormat",
+              "lastUpdatedBy",
+              "lastUpdateDate",
+              "legalEntityBankAccountNumber",
+              "timesheetsAvailable"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

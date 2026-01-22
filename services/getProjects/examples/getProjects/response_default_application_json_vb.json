@@ -1,0 +1,160 @@
+{
+    "items": [
+        {
+            "ProjectId": 300001798226289,
+            "ProjectNumber": "R10001",
+            "ProjectName": "Trimax Logics Ltd",
+            "BusinessUnitName": "US1 Business Unit",
+            "BusinessUnitId": 300000046987012,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289",
+                    "name": "projects",
+                    "kind": "item",
+                    "properties": {
+                        "changeIndicator": "ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A65787000000002770400000002737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000057371007E00020000000478"
+                    }
+                },
+                {
+                    "rel": "canonical",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289",
+                    "name": "projects",
+                    "kind": "item"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/WorkTypes",
+                    "name": "WorkTypes",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/TransferPriceSchedules",
+                    "name": "TransferPriceSchedules",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/ProjectOrganizationBuPuPVO1",
+                    "name": "ProjectOrganizationBuPuPVO1",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/LegalEntities",
+                    "name": "LegalEntities",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/ServiceTypes",
+                    "name": "ServiceTypes",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/BurdenScheduleValidationVO1",
+                    "name": "BurdenScheduleValidationVO1",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/CapitalizedInterestRateSchedulePVO1",
+                    "name": "CapitalizedInterestRateSchedulePVO1",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "lov",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/lov/TemplateVA",
+                    "name": "TemplateVA",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/Attachments",
+                    "name": "Attachments",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProjectClassifications",
+                    "name": "ProjectClassifications",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProjectCustomers",
+                    "name": "ProjectCustomers",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProjectDFF",
+                    "name": "ProjectDFF",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProjectOpportunities",
+                    "name": "ProjectOpportunities",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProjectStatusHistory",
+                    "name": "ProjectStatusHistory",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProjectTeamMembers",
+                    "name": "ProjectTeamMembers",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProjectTransactionControls",
+                    "name": "ProjectTransactionControls",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/ProviderBusinessUnits",
+                    "name": "ProviderBusinessUnits",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/TaskDependencies",
+                    "name": "TaskDependencies",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "child",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/child/Tasks",
+                    "name": "Tasks",
+                    "kind": "collection"
+                },
+                {
+                    "rel": "action",
+                    "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects/300001798226289/action/addTasksFromWorkplanTemplate",
+                    "name": "addTasksFromWorkplanTemplate",
+                    "kind": "other"
+                }
+            ]
+        }
+    ],
+    "count": 1,
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com:443/fscmRestApi/resources/11.13.18.05/projects",
+            "name": "projects",
+            "kind": "collection"
+        }
+    ]
+}

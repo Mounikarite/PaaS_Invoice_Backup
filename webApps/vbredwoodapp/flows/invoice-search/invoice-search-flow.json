@@ -1,0 +1,8 @@
+{
+  "id": "invoice-search",
+  "description": "Flow main",
+  "defaultPage": "invoice-search-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

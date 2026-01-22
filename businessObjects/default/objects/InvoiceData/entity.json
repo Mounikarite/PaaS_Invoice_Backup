@@ -1,0 +1,93 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "d7d0499e-c914-42cc-bf38-050d9a94038c",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "f472effb-33dc-4c6d-a995-ad2228127f5b",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "3b3ac967-e579-43cf-adc1-bc5edbd5d97c",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "3c0a333c-e013-40b0-be8e-8ef314a312c9",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "93cfbcf0-f053-4fc1-8857-fb95fecba6ab",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "96000f75-6aaa-4beb-b4e2-cfc411278da6",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "businessUnit",
+            "oid": "cc86c112-bc7e-4521-9896-e27f19646952",
+            "displayLabel": "Business Unit"
+        },
+        {
+            "type": "string",
+            "name": "contract",
+            "oid": "493b92c7-71f6-43e9-b0ca-baecc463e2e7",
+            "displayLabel": "Contract"
+        },
+        {
+            "type": "boolean",
+            "name": "timesheetsAvailable",
+            "oid": "e6ee71f6-84e2-471e-85ab-d96a113eb27d",
+            "displayLabel": "timesheets_available"
+        },
+        {
+            "type": "string",
+            "name": "expensesRecordsAvailable",
+            "oid": "5acd9d17-4cca-4342-b847-37c9fc176575",
+            "displayLabel": "expensesRecordsAvailable"
+        },
+        {
+            "type": "string",
+            "name": "legalEntityBankAccountNumber",
+            "oid": "d18c9de6-40eb-4401-822f-2d06f8c956fb",
+            "displayLabel": "legalEntityBankAccountNumber"
+        },
+        {
+            "type": "string",
+            "name": "invoiceFormat",
+            "oid": "ba019bd9-6777-43f8-8e17-dbc624a4ba2c",
+            "displayLabel": "Invoice Format"
+        }
+    ],
+    "name": "InvoiceData",
+    "oid": "dba116fe-e11f-447d-8feb-1d243cb17ec7",
+    "displayLabel": "Invoice Data"
+}

@@ -1,0 +1,353 @@
+{
+    "success": true,
+    "message": "Contract invoices retrieved successfully",
+    "data": {
+        "RowCount": "86",
+        "PPMInvoices": [
+            {
+                "invoice_id": "100003247500912",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003090129278",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003247500902",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003247500895",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003247500906",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003247511020",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003078432364",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003000896618",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002992307631",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002975511494",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002917330843",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100001027332163",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002916472601",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002916472577",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002916472564",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002916472559",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002839363290",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002837608006",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003247501774",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100001852390751",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100001852955238",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002642148614",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002700406649",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002775332984",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002802617833",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003247513841",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002831555987",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100002837608000",
+                "ppm_invoice_number": "1"
+            },
+            {
+                "invoice_id": "100003076397637",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100000667953430",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100003078497147",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100003248424826",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100002700406636",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100003249653399",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100001029186712",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100001029148618",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100002922258247",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100001852390758",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100002830723736",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100002830638650",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100003247500920",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100002642928247",
+                "ppm_invoice_number": "2"
+            },
+            {
+                "invoice_id": "100003221815037",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100003079250833",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100003076471046",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100002916472829",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100002916472535",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100002643847247",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100001029148623",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100000667868528",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100003248729326",
+                "ppm_invoice_number": "3"
+            },
+            {
+                "invoice_id": "100003079250842",
+                "ppm_invoice_number": "4"
+            },
+            {
+                "invoice_id": "100002807326209",
+                "ppm_invoice_number": "4"
+            },
+            {
+                "invoice_id": "100000549876253",
+                "ppm_invoice_number": "4"
+            },
+            {
+                "invoice_id": "100003219900485",
+                "ppm_invoice_number": "4"
+            },
+            {
+                "invoice_id": "100003219900541",
+                "ppm_invoice_number": "4"
+            },
+            {
+                "invoice_id": "100000667786189",
+                "ppm_invoice_number": "5"
+            },
+            {
+                "invoice_id": "100002916472642",
+                "ppm_invoice_number": "5"
+            },
+            {
+                "invoice_id": "100003079252241",
+                "ppm_invoice_number": "5"
+            },
+            {
+                "invoice_id": "100003222583413",
+                "ppm_invoice_number": "5"
+            },
+            {
+                "invoice_id": "100003249653431",
+                "ppm_invoice_number": "5"
+            },
+            {
+                "invoice_id": "100000667953409",
+                "ppm_invoice_number": "6"
+            },
+            {
+                "invoice_id": "100003222583415",
+                "ppm_invoice_number": "6"
+            },
+            {
+                "invoice_id": "100000667868581",
+                "ppm_invoice_number": "6"
+            },
+            {
+                "invoice_id": "100000667785984",
+                "ppm_invoice_number": "6"
+            },
+            {
+                "invoice_id": "100003223584445",
+                "ppm_invoice_number": "7"
+            },
+            {
+                "invoice_id": "100003222583417",
+                "ppm_invoice_number": "7"
+            },
+            {
+                "invoice_id": "100002922258243",
+                "ppm_invoice_number": "7"
+            },
+            {
+                "invoice_id": "100002660391859",
+                "ppm_invoice_number": "8"
+            },
+            {
+                "invoice_id": "100003222583419",
+                "ppm_invoice_number": "8"
+            },
+            {
+                "invoice_id": "100002660391861",
+                "ppm_invoice_number": "9"
+            },
+            {
+                "invoice_id": "100000599489573",
+                "ppm_invoice_number": "9"
+            },
+            {
+                "invoice_id": "100003249653393",
+                "ppm_invoice_number": "9"
+            },
+            {
+                "invoice_id": "100003249653395",
+                "ppm_invoice_number": "10"
+            },
+            {
+                "invoice_id": "100002916472818",
+                "ppm_invoice_number": "10"
+            },
+            {
+                "invoice_id": "100002788236471",
+                "ppm_invoice_number": "12"
+            },
+            {
+                "invoice_id": "100002916472689",
+                "ppm_invoice_number": "15"
+            },
+            {
+                "invoice_id": "100003220872630",
+                "ppm_invoice_number": "20"
+            },
+            {
+                "invoice_id": "100003221986891",
+                "ppm_invoice_number": "21"
+            },
+            {
+                "invoice_id": "100001658301881",
+                "ppm_invoice_number": "23"
+            },
+            {
+                "invoice_id": "100003247503062",
+                "ppm_invoice_number": "24"
+            },
+            {
+                "invoice_id": "100000233032818",
+                "ppm_invoice_number": "26"
+            },
+            {
+                "invoice_id": "100003247502034",
+                "ppm_invoice_number": "36"
+            },
+            {
+                "invoice_id": "100003247503246",
+                "ppm_invoice_number": "39"
+            },
+            {
+                "invoice_id": "100003247501648",
+                "ppm_invoice_number": "44"
+            },
+            {
+                "invoice_id": "100003247503447",
+                "ppm_invoice_number": "77"
+            }
+        ]
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "component-dependencies": {
+    "oj-sp": {
+      "version": "2401.0.0",
+      "components": {
+        "messages-banner": "2401.0.0",
+        "messages-toast": "2401.0.0",
+        "collection-container": "2401.0.0",
+        "calendar": "2401.0.0",
+        "vertical-anchor-navigator": "2401.0.0",
+        "bottom-drawer-template": "2401.0.0",
+        "in-app-navigation": "2401.0.0",
+        "task-card": "2401.0.0",
+        "section": "2401.0.0",
+        "advanced-create-edit": "2401.0.0",
+        "message-unsaved-changes": "2401.0.0",
+        "data-management-page": "2401.0.0",
+        "collection-container-advanced": "2401.0.0",
+        "general-drawer-template": "2401.0.0",
+        "item-overview-page": "2401.0.0",
+        "item-overview": "2401.0.0",
+        "smart-search-page": "2401.0.0",
+        "list-item-template": "2401.0.0",
+        "empty-state": "2401.0.0",
+        "smart-search": "2401.0.0",
+        "dashboard-landing-page": "2401.0.0",
+        "scoreboard": "2401.0.0",
+        "dashboard-grid": "2401.0.0",
+        "dashboard-panel": "2401.0.0",
+        "profile-card": "2401.0.0",
+        "simple-create-edit": "2401.0.0",
+        "input-email": "2401.0.0"
+      }
+    },
+    "oj-dyn": {
+      "version": "15.0.2",
+      "components": {
+        "form": "15.0.2"
+      }
+    },
+    "oj-dynamic": {
+      "version": "15.0.2",
+      "components": {
+        "form": "15.0.2",
+        "table": "15.0.2"
+      }
+    }
+  }
+ }

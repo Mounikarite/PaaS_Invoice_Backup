@@ -1,0 +1,44 @@
+{
+  "root": "callFunctionTest",
+  "description": "",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetINVOICEFETCHFILE1Sample.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetINVOICEFETCHFILE1Sample": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "INVOICE_FETCH_FILE/getINVOICE_FETCH_FILE1_0Sample"
+      },
+      "outcomes": {
+
+        "failure": "fireNotification"
+      }
+    },
+    "callFunctionTest": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "test",
+        "params": [
+          "{{ $variables.current }}"
+        ]
+      },
+      "outcomes": {
+        "success": "callRestGetINVOICEFETCHFILE1Sample"
+      }
+    }
+  },
+  "variables": {
+    "current": {
+      "type": "object",
+      "input": "fromCaller"
+    }
+  }
+}

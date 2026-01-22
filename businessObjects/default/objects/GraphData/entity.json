@@ -1,0 +1,81 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "69f4875f-115e-465a-b485-cffff76044d9",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "74e1139c-dc61-4cab-bf07-3dd7845f2d86",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "1948ce05-23bb-4f12-82af-62f6ab737832",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "eae96131-a915-43d6-9d0f-9029329d5e66",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "444abf6d-375b-4497-89cc-72bfabc6a07e",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "a9233915-bd8b-42b5-8a3e-1885d4cdaeda",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "invoiceNoBackup",
+            "oid": "8d7a933d-9af5-4446-b9a2-93263938be7d",
+            "displayLabel": "invoiceNoBackup"
+        },
+        {
+            "type": "string",
+            "name": "invoiceWithBackup",
+            "oid": "acadc913-6c74-4d27-911f-3abc5cfc9eb5",
+            "displayLabel": "InvoiceWithBackup"
+        },
+        {
+            "type": "string",
+            "name": "month",
+            "oid": "7a2fe81f-e8c9-4cc2-8406-55ffec017dcb",
+            "displayLabel": "Month"
+        },
+        {
+            "type": "string",
+            "name": "year",
+            "oid": "903ad978-2b5d-4469-9865-1bfdccd5b372",
+            "displayLabel": "year"
+        }
+    ],
+    "name": "GraphData",
+    "oid": "0cfc17be-3347-4238-83dd-4167a42ac00d",
+    "displayLabel": "Graph Data"
+}

@@ -1,0 +1,12 @@
+{
+    "success": true,
+    "message": "Suppliers retrieved successfully",
+    "data": {
+        "RowCount": "1",
+        "Projects": [
+            {
+                "SUPPLIER_NAME": "Lee Supplies"
+            }
+        ]
+    }
+}

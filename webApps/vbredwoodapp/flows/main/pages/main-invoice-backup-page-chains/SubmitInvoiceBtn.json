@@ -1,0 +1,13 @@
+{
+  "root": "fireNotification",
+  "description": "",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "Submit"
+      }
+    }
+  }
+}

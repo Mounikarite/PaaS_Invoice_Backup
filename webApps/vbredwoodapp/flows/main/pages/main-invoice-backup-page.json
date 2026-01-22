@@ -1,0 +1,837 @@
+{
+  "title": "",
+  "description": "email",
+  "variables": {
+    "AR_Invoice_Number": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": {
+        "initials": "string",
+        "src": "string"
+      },
+      "defaultValue": {
+        "initials": "",
+        "src": ""
+      }
+    },
+    "bid": {
+      "type": "string"
+    },
+    "bu_id": {
+      "type": "string"
+    },
+    "bu_list": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getApiOracleLovBusinessUnits",
+        "textFilterAttributes": [
+          "bu_name"
+        ],
+        "keyAttributes": "bu_id"
+      }
+    },
+    "cid": {
+      "type": "string"
+    },
+    "contextualInfoLabelVisible": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "contextualInfoSticky": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "contract_id": {
+      "type": "string"
+    },
+    "contract_list": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getApiOracleLovContracts",
+        "keyAttributes": "contract_display",
+        "textFilterAttributes": [
+          "contract_display"
+        ]
+      }
+    },
+    "dirtyDataFlag": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "dirtyDialogOpen": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "displayMode": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "formState1": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "formState2": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "getProjectsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "getProjects/getProjects",
+        "responseType": "getProjectsResponse",
+        "uriParameters": {
+          "q=BusinessUnitId": "{{ $variables.bu_id }}"
+        }
+      }
+    },
+    "gLDITC001LOVARINVOICES010000ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_AR_INVOICES1_0",
+        "keyAttributes": "invoice_id",
+        "itemsPath": "ARInvoices",
+        "responseType": "getGLDITC001LOVARINVOICES1Response",
+        "uriParameters": {
+          "p_contract_id": "{{ $variables.contract_id }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "ar_invoice_number"
+          ]
+        }
+      }
+    },
+    "gLDITC001LOVARINVOICES010000ListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Databridge_Oracle_Invoice_Backup/getApiOracleLovArInvoices",
+        "responseType": "getApiOracleLovArInvoices",
+        "itemsPath": "data.ARInvoices",
+        "uriParameters": {
+          "P_CONTRACT_ID": "{{ $variables.cid?$variables.cid:'' }}"
+        },
+        "keyAttributes": "invoice_id",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "ar_invoice_number"
+          ]
+        }
+      }
+    },
+    "gLDITC001LOVBUSINESSUNITS010000ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+        "keyAttributes": "bu_id",
+        "itemsPath": "BusinessUnits",
+        "responseType": "getGLDITC001LOVBUSINESSUNITS1Response",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "bu_name"
+          ]
+        }
+      }
+    },
+    "gLDITC001LOVBUSINESSUNITS010000ListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+        "keyAttributes": "bu_id",
+        "itemsPath": "BusinessUnits",
+        "responseType": "getGLDITC001LOVBUSINESSUNITS1Response2",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "bu_name"
+          ]
+        }
+      }
+    },
+    "gLDITC001LOVPPMCONTRACTS010000ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0",
+        "keyAttributes": "contract_id",
+        "itemsPath": "Contracts",
+        "responseType": "getGLDITC001LOVPPMCONTRACTS1Response",
+        "uriParameters": {
+          "p_bu_id": "{{ $variables.bu_id }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "contract_display"
+          ]
+        }
+      }
+    },
+    "gLDITC001LOVPPMINVOICES010000ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+
+        "itemsPath": "PPMInvoices",
+        "responseType": "getGLDITC001LOVPPMINVOICES1Response",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "ppm_invoice_number"
+          ]
+        },
+        "keyAttributes": "invoice_id",
+        "fetchChain": "getGLD_ITC_0001_LOV_PPM_INVOICES1_0Fetch"
+      },
+      "required": false,
+      "input": "none"
+    },
+    "gLDITC001LOVPPMINVOICES010000ListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_PPM_INVOICES1_0",
+        "keyAttributes": "ppm_invoice_number",
+        "itemsPath": "PPMInvoices",
+        "responseType": "getGLDITC001LOVPPMINVOICES1Response2",
+        "uriParameters": {
+          "p_contract_id": "{{ $variables.contract_id?$variables.contract_id:'' }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "ppm_invoice_number"
+          ]
+        }
+      }
+    },
+    "gLDITC001LOVPPMINVOICES010000ListSDP3": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Databridge_Oracle_Invoice_Backup/getApiOracleLovContractInvoices",
+        "responseType": "getApiOracleLovContractInvoices",
+        "itemsPath": "data.PPMInvoices",
+        "keyAttributes": "invoice_id",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "ppm_invoice_number"
+          ]
+        },
+        "uriParameters": {
+          "P_CONTRACT_ID": "{{ $variables.cid?$variables.cid:'' }}"
+        }
+      }
+    },
+    "goToParentOption": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "isSaved": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "objectId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "PPM_INV_ERPC": {
+      "type": {
+        "dm_doc_id": "string",
+        "dm_version_number": "string",
+        "file_name": "string",
+        "link": "string"
+      }
+    },
+    "ppmInvoicenumber": {
+      "type": "string"
+    },
+    "primaryAlwaysOn": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "projectsadp": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getProjects",
+        "textFilterAttributes": [
+          "ProjectNumber"
+        ],
+        "keyAttributes": "ProjectNumber"
+      }
+    },
+    "projectsADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "endpoint": "Databridge_Oracle_Invoice_Backup/getApiOracleLovProjects",
+        "responseType": "getApiOracleLovProjects",
+        "uriParameters": {
+          "P_BU_ID": "{{ $variables.bu_id }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "PROJECT_DISPLAY"
+          ]
+        },
+        "itemsPath": "data.Projects",
+        "itemType": "getApiOracleLovProjects",
+        "textFilterAttributes": [
+          "PROJECT_DISPLAY"
+        ],
+        "keyAttributes": "PROJECT_ID"
+
+      }
+    },
+    "projectValue": {
+      "type": "string"
+    },
+    "saveOption": {
+      "type": "string",
+      "defaultValue": "off"
+    },
+    "supplier": {
+      "type": "string"
+    },
+    "supplierADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "endpoint": "Databridge_Oracle_Invoice_Backup/getApiOracleLovSuppliers",
+        "responseType": "getApiOracleLovSuppliers",
+        "itemsPath": "data.Projects",
+        "uriParameters": {
+          "P_INVOICE_ID": "{{ $page.variables.AR_Invoice_Number?$page.variables.AR_Invoice_Number: $page.variables.ppmInvoicenumber }}",
+          "P_PROJECT_ID": "{{ $variables.projectValue?$variables.projectValue:'' }}"
+        },
+        "keyAttributes": "SUPPLIER_NAME",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "SUPPLIER_NAME"
+          ]
+        },
+        "itemType": "getApiOracleLovSuppliers",
+        "textFilterAttributes": [
+          "SUPPLIER_NAME"
+        ]
+      }
+    },
+    "supplierArray": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "id": 1,
+          "value": "ABC Consulting",
+          "label": "ABC Consulting"
+        },
+        {
+          "id": 2,
+          "value": "US Gas and Electric",
+          "label": "US Gas and Electric"
+        },
+        {
+          "id": 3,
+          "value": "Building Management",
+          "label": "Building Management"
+        }
+      ]
+    }
+
+  },
+  "metadata": {
+    "dynamicContainerMetadata": {
+      "type": "vb/ContainerMetadataProviderDescriptor"
+    }
+  },
+  "types": {
+    "@decorators.getApiOracleLovArInvoices": {
+      "endpoint": "getApiOracleLovArInvoices",
+      "service": "Databridge_Oracle_Invoice_Backup",
+      "path": "response"
+    },
+    "@decorators.getApiOracleLovBusinessUnits": {
+      "endpoint": "getApiOracleLovBusinessUnits",
+      "service": "Databridge_Oracle_Invoice_Backup",
+      "path": "response-_-data-_-BusinessUnits[0]"
+    },
+    "@decorators.getApiOracleLovContractInvoices": {
+      "endpoint": "getApiOracleLovContractInvoices",
+      "service": "Databridge_Oracle_Invoice_Backup",
+      "path": "response"
+    },
+    "@decorators.getApiOracleLovContracts": {
+      "endpoint": "getApiOracleLovContracts",
+      "service": "Databridge_Oracle_Invoice_Backup",
+      "path": "response-_-data-_-Contracts[0]"
+    },
+    "@decorators.getApiOracleLovProjects": {
+      "endpoint": "getApiOracleLovProjects",
+      "service": "Databridge_Oracle_Invoice_Backup",
+      "path": "response-_-data-_-Projects[0]"
+    },
+    "@decorators.getApiOracleLovSuppliers": {
+      "endpoint": "getApiOracleLovSuppliers",
+      "service": "Databridge_Oracle_Invoice_Backup",
+      "path": "response-_-data-_-Projects[0]"
+    },
+    "@decorators.getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0": {
+      "endpoint": "getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response-_-BusinessUnits[0]"
+    },
+    "@decorators.getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0": {
+      "endpoint": "getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response-_-Contracts[0]"
+    },
+    "@decorators.getGLDITC001LOVARINVOICES1Response": {
+      "endpoint": "getGLD_ITC_0001_LOV_AR_INVOICES1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVARINVOICES1Response2": {
+      "endpoint": "getGLD_ITC_0001_LOV_AR_INVOICES1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVBUSINESSUNITS1Response": {
+      "endpoint": "getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response-_-BusinessUnits[0]"
+    },
+    "@decorators.getGLDITC001LOVBUSINESSUNITS1Response2": {
+      "endpoint": "getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVPPMCONTRACTS1Response": {
+      "endpoint": "getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVPPMINVOICES1Response": {
+      "endpoint": "getGLD_ITC_0001_LOV_PPM_INVOICES1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVPPMINVOICES1Response2": {
+      "endpoint": "getGLD_ITC_0001_LOV_PPM_INVOICES1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVPPMINVOICES1Response3": {
+      "endpoint": "getGLD_ITC_0001_LOV_PPM_INVOICES1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getProjects": {
+      "endpoint": "getProjects",
+      "service": "getProjects",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getProjectsResponse": {
+      "endpoint": "getProjects",
+      "service": "getProjects",
+      "path": "response-_-items[0]"
+    },
+    "getApiOracleLovArInvoices": {
+      "data": {
+        "ARInvoices": [
+          {
+            "ar_invoice_number": "string",
+            "invoice_id": "string"
+          }
+        ]
+      }
+    },
+    "getApiOracleLovBusinessUnits": {
+      "bu_id": "string",
+      "bu_name": "string"
+
+    },
+    "getApiOracleLovContractInvoices": {
+      "data": {
+        "PPMInvoices": [
+          {
+            "invoice_id": "string",
+            "ppm_invoice_number": "string"
+          }
+        ]
+      }
+    },
+    "getApiOracleLovContracts": {
+      "contract_display": "string",
+      "contract_id": "string"
+    },
+    "getApiOracleLovProjects": {
+      "PROJECT_DISPLAY": "string",
+      "PROJECT_ID": "string"
+    },
+    "getApiOracleLovSuppliers": {
+      "SUPPLIER_NAME": "string"
+    },
+    "getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0": {
+      "bu_name": "string"
+    },
+    "getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0": {
+      "contract_display": "string",
+      "contract_id": "string"
+    },
+    "getGLDITC001LOVARINVOICES1Response": {
+      "ARInvoices": [
+        {
+          "ar_invoice_number": "string",
+          "invoice_id": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVARINVOICES1Response2": {
+      "ARInvoices": [
+        {
+          "ar_invoice_number": "string",
+          "invoice_id": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVBUSINESSUNITS1Response": {
+      "bu_name": "string"
+    },
+    "getGLDITC001LOVBUSINESSUNITS1Response2": {
+      "BusinessUnits": [
+        {
+          "bu_id": "string",
+          "bu_name": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVPPMCONTRACTS1Response": {
+      "Contracts": [
+        {
+          "contract_display": "string",
+          "contract_id": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVPPMINVOICES1Response": {
+      "PPMInvoices": [
+        {
+          "invoice_id": "string",
+          "ppm_invoice_number": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVPPMINVOICES1Response2": {
+      "PPMInvoices": [
+        {
+          "invoice_id": "string",
+          "ppm_invoice_number": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVPPMINVOICES1Response3": {
+      "PPMInvoices": [
+        {
+          "invoice_id": "string",
+          "ppm_invoice_number": "string"
+        }
+      ]
+    },
+    "getProjects": {
+      "BusinessUnitId": "number",
+      "BusinessUnitName": "string",
+      "ProjectId": "number",
+      "ProjectName": "string",
+      "ProjectNumber": "string"
+    },
+    "getProjectsResponse": {
+      "ProjectId": "number",
+      "ProjectName": "string"
+    },
+    "projects": {
+      "id": "number",
+      "label": "string",
+      "value": "string"
+    },
+    "supplier": {
+      "id": "number",
+      "label": "string",
+      "value": "string"
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1"
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "confirmNoOjAction": {
+      "chains": [
+        {
+          "chain": "dialogResponseChain",
+          "parameters": {
+            "detail": "{{ $event.detail }}",
+            "response": "NO"
+          }
+        }
+      ]
+    },
+    "confirmYesOjAction": {
+      "chains": [
+        {
+          "chain": "dialogResponseChain",
+          "parameters": {
+            "detail": "{{ $event.detail }}",
+            "response": "YES"
+          }
+        }
+      ]
+    },
+    "hyperlinkClick": {
+      "chains": [
+        {
+          "chain": "HyperlinkClickChain",
+          "parameters": {
+            "event": "{{$event}}"
+          }
+        }
+      ]
+    },
+    "ojSpGoToParent": {
+      "chains": [
+        {
+          "chain": "goToParent",
+          "parameters": {}
+        }
+      ]
+    },
+    "ojSpSubmit": {
+      "chains": [
+        {
+          "chain": "AdvancedCreateAndEditPageTemplateSpSaveChain"
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem2": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem3": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain4",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem4": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain3",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem5": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain6",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "vbBeforeExit": {
+      "chains": [
+        {
+          "chain": "checkBeforeExit",
+          "parameters": {}
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "firePageLayoutEventChain"
+        }
+      ]
+    },
+    "ojSsce1SpSave2": {
+      "chains": [
+        {
+          "chain": "AdvancedCreateAndEditPageTemplateSpSaveChain3"
+        }
+      ]
+    },
+    "ojSsce1SpPrimaryAction2": {
+      "chains": [
+        {
+          "chain": "AdvancedCreateAndEditPageTemplateSpPrimaryActionChain2"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+
+      "oj-popup": {
+        "path": "ojs/ojpopup"
+      },
+      "oj-sp-advanced-create-edit": {
+        "path": "oj-sp/advanced-create-edit/loader"
+      },
+      "oj-sp-message-unsaved-changes": {
+        "path": "oj-sp/message-unsaved-changes/loader"
+      },
+      "oj-sp-vertical-anchor-navigator": {
+        "path": "oj-sp/vertical-anchor-navigator/loader"
+      }
+
+    },
+    "modules": {
+      "ojValidationBase": {
+        "path": "ojs/ojvalidation-base"
+      }
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-63-icoAdvancedCreateAndEdit48Svg",
+    "chains": {
+      "AdvancedCreateAndEditPageTemplateSpSaveChain3": {
+        "showInDiagram": "full"
+      }
+    }
+  },
+  "layouts": {
+    "containerLayout1": {
+      "label": "Container Rule Set 1",
+      "layoutType": "container",
+      "layouts": {
+        "case1": {
+          "label": "Case 1",
+          "layoutType": "container",
+          "layout": {
+            "sectionTemplateMap": {
+              "template1": "template1"
+            },
+            "displayProperties": [
+              "template1"
+            ]
+          }
+        }
+      },
+      "rules": [
+        "containerLayout1-rule1"
+      ]
+    },
+    "containerLayout1-rule1": {
+      "expression": "case1"
+    }
+  },
+  "templates": {
+    "template1": {
+      "title": "Business Unit Information",
+      "description": "BU Info",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "section",
+        "layout": "containerLayout1"
+      },
+      "dependencies": [
+        "oj-sp/input-email/loader",
+        "oj-sp/section/loader",
+        "ojs/ojbutton",
+        "ojs/ojdatetimepicker",
+        "ojs/ojdialog",
+        "ojs/ojformlayout",
+        "ojs/ojinputtext"        ,
+        "ojs/ojoption"        ,
+        "ojs/ojprogress-bar",
+        "ojs/ojselectcombobox",
+        "ojs/ojselectsingle",        
+        "ojs/ojswitcher"
+      ],
+      "labelHint": "Basic Information"
+    },
+    "template2": {
+      "title": "Section 2",
+      "description": "Sample Section 2",
+      "extensible": "byReference",
+      "@dt": {
+        "layout": "containerLayout1",
+        "type": "section"
+      },
+      "dependencies": [
+    ],
+      "labelHint": "Sample Section 2"
+    }
+  }
+}

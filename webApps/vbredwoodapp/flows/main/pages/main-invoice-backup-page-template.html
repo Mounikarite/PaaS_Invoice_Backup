@@ -1,0 +1,87 @@
+<!-- Dynamic Container Templates -->
+
+<template id="template1">
+  <oj-sp-section section-title="Information" class="oj-helper-text-align-center oj-helper-justify-content-center">
+    <div class="oj-flex">
+      <div class="oj-flex-item oj-sm-12 oj-md-4"></div>
+      <div class="oj-flex-item oj-sm-12 oj-md-7">
+        <oj-form-layout class="oj-md-padding-10x" direction="column"
+          columns="1">
+          
+          <oj-select-single label-hint="Business Unit" data="[[ $variables.bu_list ]]" item-text="bu_name"
+            value="{{ $variables.bu_id }}" on-value-item-changed="[[$listeners.selectValueItem3]]"></oj-select-single>
+          <oj-select-single label-hint="Projects" data="[[$variables.projectsADP]]" item-text="PROJECT_DISPLAY"
+            on-value-item-changed="[[$listeners.selectValueItem4]]" value="{{ $variables.projectValue }}"></oj-select-single>
+         
+          <oj-select-single label-hint="Contract" data="[[ $variables.contract_list ]]" item-text="contract_display"
+            value="{{ $variables.contract_id }}" on-value-item-changed="[[$listeners.selectValueItem]]"></oj-select-single>
+         
+          <oj-select-single label-hint="Contract Invoice Number" value="{{ $variables.ppmInvoicenumber }}"
+            item-text="ppm_invoice_number" data="[[$variables.gLDITC001LOVPPMINVOICES010000ListSDP3]]"
+            on-value-item-changed="[[$listeners.selectValueItem5]]"></oj-select-single>
+             <oj-select-single label-hint="Supplier" data="[[$variables.supplierADP]]"
+            item-text="SUPPLIER_NAME" value="{{ $variables.supplier}}"></oj-select-single>
+           
+            <oj-select-single label-hint="AR Invoice Number" data="[[$variables.gLDITC001LOVARINVOICES010000ListSDP2]]"
+            item-text="ar_invoice_number" value="{{ $variables.AR_Invoice_Number}}"></oj-select-single>
+            <oj-input-text virtual-keyboard="email" label-hint="Email" value="{{ $variables.email }}"></oj-input-text>
+          
+            
+
+            
+              
+          <oj-switcher value="one">
+     
+
+            
+
+        <div slot="one" id="div--2083903080-1">
+        </div>
+        <div slot="two" id="div--2083903080-2">
+      <div class="oj-flex"></div>
+        </div>
+        <div slot="three" id="div--2083903080-3">
+      <div class="oj-flex"></div>
+        </div>
+          </oj-switcher>
+        </oj-form-layout>
+        
+
+      </div>
+    </div>
+      <div style="text-align:right">
+            <oj-button chroming="solid">
+    <a target="_blank" class="oj-link"
+      href="https://fa-etao-dev20-saasfademo1.ds-fa.oraclepdemos.com/analytics/saw.dll?bipublisherEntry&Action=open&itemType=.xdo&bipPath=%2FCustom%2FInvoice_Backup%2FRED%20Path%2FInvoice%20Backup%20Missing%20Attachment%20Report.xdo&path=%2Fshared%2FCustom%2FInvoice_Backup%2FRED%20Path%2FInvoice%20Backup%20Missing%20Attachment%20Report.xdo">Missing Backup Attachments Report</a>
+            </oj-button>
+          </div>
+    <oj-dialog dialog-title="" id="mydialog" cancel-behavior="icon" style="width: 500px; height: 380px;">
+  <div slot="body">
+    <div class="oj-flex">
+      <oj-form-layout class="oj-flex" columns="1" label-edge="start">
+        <oj-input-text label-hint="Doc ID" value="{{ $variables.PPM_INV_ERPC.dm_doc_id }}" readonly="true"></oj-input-text>
+        <oj-input-text label-hint="DM Version Number" value="{{ $variables.PPM_INV_ERPC.dm_version_number }}"
+          readonly="true"></oj-input-text>
+        <oj-input-text label-hint="File Name" value="{{ $variables.PPM_INV_ERPC.file_name }}" readonly="true"></oj-input-text>
+
+
+      </oj-form-layout>
+    </div>
+  </div>
+  <div slot="footer">
+    <oj-button on-oj-action="[[$listeners.buttonAction]]">Close</oj-button>
+  </div>
+</oj-dialog>
+<oj-dialog title="Processing..." id="loadDialog" class="" style="width: 300px; height: 180px;">
+  <div slot="body">
+    <div class="oj-flex-item oj-sm-margin-5x-top">
+       
+      <oj-progress-bar value="-1" class="oj-sm-margin-3x-top"></oj-progress-bar>
+    </div>
+  </div>
+</oj-dialog>
+  </oj-sp-section>
+</template>
+
+
+

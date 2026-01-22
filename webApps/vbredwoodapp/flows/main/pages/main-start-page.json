@@ -1,0 +1,38 @@
+{
+
+  "title": "",
+  "description": "",
+  "variables": {},
+  "metadata": {
+    "dynamicContainerMetadata": {
+      "type": "vb/ContainerMetadataProviderDescriptor"
+    }
+  },
+  "types": {},
+  "chains": {},
+  "eventListeners": {},
+  "imports": {
+    "components": {
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-select-many": {
+        "path": "ojs/ojselectcombobox"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-in-app-navigation": {
+        "path": "oj-sp/in-app-navigation/loader"
+      },
+      "oj-sp-task-card": {
+        "path": "oj-sp/task-card/loader"
+      }
+    }
+  },
+  "layouts": {},
+  "templates": {}
+}

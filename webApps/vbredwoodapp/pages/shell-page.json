@@ -1,0 +1,58 @@
+{
+    "description": "",
+    "routerFlow": "main",
+    "variables": {
+      "messageToast": {
+        "type": "string"
+      },
+      "messagesBannerADP": {
+        "type": "vb/ArrayDataProvider2",
+        "defaultValue": {
+          "itemType": "MessagesBannerType",
+          "keyAttributes": "id"
+        }
+      },
+      "messageId": {
+        "type": "number",
+        "defaultValue": 1
+      }
+    },
+    "metadata": {},
+    "types": {
+      "MessagesBannerType": {
+        "id": "number",
+        "messageType": "string",
+        "primaryText": "string",
+        "primaryActionLabel": "string",
+        "secondaryText": "any",
+        "secondaryActionLabel": "string"
+      }
+    },
+    "eventListeners": {
+    "application:spShowToast": {
+      "chains": [
+        {
+          "parameters": {
+            "event": "{{ $event }}"
+          },
+          "chain": "showMessageToast"
+        }
+      ]
+    },
+    "vbNotification": {
+      "chains": [
+        {
+          "parameters": {
+            "event": "{{ $event }}"
+          },
+          "chain": "showNotificationMessage"
+        }
+      ]
+    }
+    },
+    "imports": {
+    "components": {
+    }
+    },
+    "translations": {}
+  }

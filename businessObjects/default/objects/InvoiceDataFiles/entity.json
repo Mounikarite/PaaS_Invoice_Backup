@@ -1,0 +1,87 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "0dda889c-f933-4611-8ca0-c8abcf62f6dd",
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "003c7776-f0c1-4553-aad9-57b077ef1c58",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "01344be9-622c-4c80-8214-9748752a5ff3",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "39f32827-d194-42bc-b64b-dc20373e6680",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "cc205ac6-0ae5-45c3-bc2e-e47b7f9ba807",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "9a541631-3e20-4129-8f52-b86c26d24871",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "invoiceNumber",
+            "oid": "f61b847e-228b-4958-8a7c-4a430dee531d",
+            "displayLabel": "Invoice Number"
+        },
+        {
+            "type": "string",
+            "name": "businessUnit",
+            "oid": "8b40a021-6584-4ded-9ccc-d0c228bfdbbb",
+            "displayLabel": "Business Unit"
+        },
+        {
+            "type": "string",
+            "name": "documentAvailable",
+            "oid": "a67d02f8-c325-4d40-a572-efab88a1382f",
+            "displayLabel": "Document Available"
+        },
+{
+            "type": "string",
+            "name": "FileAttachment",
+            "oid": "ba8de9d8-482d-4c4d-9dfa-fabb62698347",
+            "displayLabel": "File Attachment",
+            "format": "uri"
+        },
+        {
+            "type": "string",
+            "name": "documentId",
+            "oid": "4febeb05-9473-448c-a8dc-ae9db710a74d",
+            "displayLabel": "DocumentId"
+        }
+    ],
+    "name": "InvoiceDataFiles",
+    "oid": "176cb63c-dd8d-42b3-8854-ffeb524e9f71",
+    "displayLabel": "Invoice Data Files"
+}

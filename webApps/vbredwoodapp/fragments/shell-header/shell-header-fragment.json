@@ -1,0 +1,42 @@
+{
+  "title": "",
+  "description": "",
+  "eventListeners": {},
+  "events": {},
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-menu": {
+        "path": "ojs/ojmenu"
+      },
+      "oj-menu-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-messages": {
+        "path": "ojs/ojmessages"
+      },
+      "oj-navigation-list": {
+        "path": "ojs/ojnavigationlist"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+
+    }
+  },
+  "metadata": {
+    "dynamicContainerMetadata": {
+      "type": "vb/ContainerMetadataProviderDescriptor"
+    }
+  },
+  "types": {},
+  "variables": {},
+  "referenceable": "self",
+  "layouts": {},
+  "templates": {}
+}

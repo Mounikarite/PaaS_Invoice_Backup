@@ -1,0 +1,117 @@
+<div class="oj-flex">
+  <div class="oj-flex oj-flex-item oj-sm-flex-1">
+    <div class="oj-flex-item oj-sm-12 oj-md-1"></div>
+    <oj-buttonset-one class="oj-flex-item oj-sm-12 oj-md-2" chroming="borderless"
+      on-value-changed="[[$listeners.buttonsetValue]]">
+      <oj-option value="option1">&lt; Invoice Backup</oj-option>
+    </oj-buttonset-one>
+    <div class="oj-flex-item oj-sm-12 oj-md-6"></div>
+    <oj-buttonset-one class="oj-flex-item oj-sm-12 oj-md-2" chroming="borderless"
+      on-value-changed="[[$listeners.buttonsetValue2]]">
+      <oj-option value="dashboard" id="nav_to_dashboard">Dashboard &gt;</oj-option>
+    </oj-buttonset-one>
+  </div>
+</div>
+<oj-sp-smart-search-page id="oj_ssp1" page-title="Invoice Workbench" page-subtitle="Search Backup Documents"
+  smart-filters.expanded="{{$page.variables.expanded}}" smart-filters.value="{{$page.variables.appliedFilters}}"
+  smart-filters.ask-hint="{{$page.variables.askHint}}" smart-filters.results-data="[[$page.variables.searchResultsDP]]"
+  smart-filters.suggestions="[[$page.variables.searchSuggestionsDP]]"
+  smart-filters.suggestion-filters="[[$page.variables.suggestionFiltersDP]]"
+  select-context.data="{{$page.variables.selectContextData}}"
+  select-context.item-text="{{$page.variables.selectContextItemText}}"
+  select-context.label-hint="{{$page.variables.selectContextLabelHint}}"
+  select-context-value="{{$page.variables.selectContextValue}}"
+  select-context-value-item="{{$page.variables.selectContextValueItem}}"
+  on-sp-go-to-parent="[[$listeners.ojSpGoToParent]]" show-all-total-count="[[$page.variables.showAllTotalCount]]"
+  all-total-count-message="[[$page.variables.initialString]]"
+  on-smart-filters-changed-action="[[$listeners.ojSpSmartFiltersChangedAction]]" display-options.in-flow-back="true"
+  primary-action.display="on" display-mode="mixed">
+  <oj-sp-collection-container display-options.add="off" display-options.delete="off"
+    functional-primary-actions="[[$page.variables.functionalPrimaryActions]]"
+    functional-secondary-actions="[[$variables.functionalSecondaryActions]]">
+    <oj-list-view class="oj-flex-item" scroll-policy-options.scroller="[[document.documentElement]]"
+      data="[[$variables.InvoiceDataListSDP]]">
+      <template slot="itemTemplate">
+        <oj-sp-list-item-template selector.row-key="[[ $current.data[0] ]]"
+          selector.aria-label="[[ 'Select Item ' + $current.index ]]"
+          columns='[[ [{"primaryText": $current.data[1], "secondaryText": $current.data[2], "tertiaryText": $current.data[3]}] ]]'></oj-sp-list-item-template>
+      </template>
+      <template slot="noData">
+        <oj-sp-empty-state :style.css-text="[['height: var(--oj-sp-smart-filter-search-main-content-height);']]"
+          primary-text="[[$application.translations.format('app','NO_SEARCH_RESULTS')]]"
+          navigation-action.label="[[$application.translations.format('app','GO_BACK')]]" navigation-action.display="on"
+          on-sp-navigation-action="[[$listeners.ojSpNavigateBack]]" display-options.layout="fullPage"></oj-sp-empty-state>
+      </template>
+    </oj-list-view>
+    
+    <!-- <oj-dynamic-table data="[[$variables.invoiceDataFilesListSDP]]"
+      metadata="[[ $metadata.businessObjectsGetallInvoiceDataFilesMetadata.provider ]]" layout="fileData"
+      on-first-selected-row-changed="[[$listeners.tableFirstSelectedRow]]" selection-mode.row="single">
+      </oj-dynamic-table> -->
+
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+        <oj-form-layout class="oj-flex-item" style="padding-left:25px;" label-edge="start">
+          <oj-select-single label-hint="Business Unit *" class="oj-form-control-width-sm"
+            value="{{ $variables.l_bu_id }}" data="[[$variables.gLDITC001LOVBUSINESSUNITS010000ListSDP]]"
+            item-text="bu_name"></oj-select-single>
+          <oj-select-single label-hint="Contract *" class="oj-form-control-width-sm"
+            value="{{ $variables.l_contract_id }}" data="[[$variables.gLDITC001LOVPPMCONTRACTS010000ListSDP]]"
+            item-text="contract_display" on-value-item-changed="[[$listeners.selectValueItem]]"></oj-select-single>
+        </oj-form-layout>
+        </div>
+      </div>
+     
+      <div class="oj-flex">
+        <div class="oj-flex-item">
+         <!-- <oj-table data="[[$variables.gLDITC001LOVARINVOICES010000ListSDP]]" 
+           columns='[{"headerText":"Ar Invoice Number","field":"ar_invoice_number"},
+                    {"headerText":"Invoice Id","field":"invoice_id","sortable":"disabled"},
+                    {"headerText":"Invoice Mode","field":"","sortable":"disabled","template":"InvMode"}]'>
+                    <template slot="InvMode">
+                      <oj-bind-text value="AR"></oj-bind-text>
+                    </template>
+            </oj-table> -->
+
+
+            <oj-table id="AR_inv" style="height:400px;"
+              columns='[{"headerText":"Invoice Number","field":"ar_invoice_number"},{"headerText":"Invoice Id","field":"invoice_id"},{"headerText":"Invoice Mode","field":"invoice_mode"},{"headerText":"Invoice View","field":"","template":"InvView"}]'
+              data="[[ $variables.AR_INV_ADP_VAR ]]">
+              <template slot="InvView">
+                  <oj-button on-oj-action="[[$listeners.buttonAction]]" chroming="borderless">
+                    <span class="oj-ux-ico-view" style="color:green;font-size:18px;font-weight:bold;margin-left:8px"></span>
+                    </oj-button>
+              </template>
+            </oj-table>
+        </div>
+      </div>
+
+      <oj-dialog id="searchInvData" cancel-behavior="icon" style="width:850px;">
+        <div slot="body">
+          <div class="oj-flex-item">
+            <oj-form-layout label-edge="top" columns="3" max-columns="3" style="width:700px;padding-top:-25px;">
+            <oj-input-text value="{{ $variables.Inv_Backup_Search_Obj.INVOICE_ID }}" label-hint="INVOICE ID "
+              readonly="true"></oj-input-text>
+            <oj-input-text label-hint="CONTRACT ID" readonly="true"
+              value="{{ $variables.Inv_Backup_Search_Obj.CONTRACT_ID }}"></oj-input-text>
+            <oj-input-text readonly="true" label-hint="BUSINESS UNIT"
+              value="{{ $variables.Inv_Backup_Search_Obj.BUSINESS_UNIT }}"></oj-input-text>
+            <oj-input-text readonly="true" label-hint="AR INVOICE NUMBER"
+              value="{{ $variables.Inv_Backup_Search_Obj.AR_INVOICE_NUMBER }}"></oj-input-text>
+            <oj-input-text readonly="true" label-hint="AR INVOICE ID"
+              value="{{ $variables.Inv_Backup_Search_Obj.AR_INVOICE_ID }}"></oj-input-text>
+            <oj-input-text readonly="true" label-hint="INVOICE MODE"
+              value="{{ $variables.Inv_Backup_Search_Obj.INVOICE_MODE }}"></oj-input-text>
+            <oj-input-text label-hint="Time Report Expenses" readonly="true"
+              value="{{ $variables.Inv_Backup_Search_Obj.TIME_REPORT_EXPENSES }}"></oj-input-text>
+            <oj-input-text label-hint="Expense Reports" readonly="true"
+              value="{{ $variables.Inv_Backup_Search_Obj.EXPENSE_REPORTS }}"></oj-input-text>
+            <oj-input-text label-hint="Backup File Name" readonly="true"
+              value="{{ $variables.Inv_Backup_Search_Obj.AR_FILE_NAME }}"></oj-input-text>
+            </oj-form-layout>
+          </div>
+        </div>
+      </oj-dialog>
+
+  </oj-sp-collection-container>
+</oj-sp-smart-search-page>

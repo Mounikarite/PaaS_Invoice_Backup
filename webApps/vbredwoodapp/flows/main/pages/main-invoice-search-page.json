@@ -1,0 +1,514 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "allFilters": {
+      "type": "filterChip[]",
+      "defaultValue": "{{$page.variables.selectContextValueItem && $page.variables.selectContextValueItem.key ? (($page.variables.appliedFilters || []).concat([{ 'filter': 'keyword', 'label': $page.variables.selectContextValueItem.data ? $page.variables.selectContextValueItem.data.label : $page.variables.selectContextValueItem.key, 'value': $page.variables.selectContextValueItem.key }])) :  $page.variables.appliedFilters }}"
+    },
+    "appliedFilters": {
+      "type": "filterChip[]",
+      "defaultValue": "{{ $page.variables.appliedFiltersStr && $page.variables.appliedFiltersStr.length > 0 ? JSON.parse($page.variables.appliedFiltersStr) : [] }}",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "updateAllFilters"
+          }
+        ]
+      }
+    },
+    "appliedFiltersStr": {
+      "type": "string",
+      "input": "fromUrl",
+      "defaultValue": "",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "updateAppliedFilters",
+            "parameters": {}
+          }
+        ]
+      }
+    },
+    "AR_INV_ADP_VAR": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "ALL_INVOICES_ADP"
+      }
+    },
+    "askHint": {
+      "type": "string",
+      "defaultValue": "Search"
+    },
+    "displayMode": {
+      "type": "string"
+    },
+    "expanded": {
+      "type": "string",
+      "defaultValue": "auto"
+    },
+    "functionalPrimaryActions": {
+      "type": "action[]"
+    },
+    "functionalSecondaryActions": {
+      "type": "action[]"
+    },
+    "gLDITC001LOVARINVOICES010000ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_AR_INVOICES1_0",
+        "keyAttributes": "invoice_id",
+        "itemsPath": "ARInvoices",
+        "responseType": "getGLDITC001LOVARINVOICES1Response",
+        "uriParameters": {
+          "p_contract_id": "{{ $variables.l_contract_id }}"
+        }
+      }
+    },
+    "gLDITC001LOVBUSINESSUNITS010000ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+        "keyAttributes": "bu_id",
+        "itemsPath": "BusinessUnits",
+        "responseType": "getGLDITC001LOVBUSINESSUNITS1Response",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "bu_name"
+          ]
+        }
+      }
+    },
+    "gLDITC001LOVPPMCONTRACTS010000ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "INVOICE_FETCH_FILE/getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0",
+        "keyAttributes": "contract_id",
+        "itemsPath": "Contracts",
+        "responseType": "getGLDITC001LOVPPMCONTRACTS1Response",
+        "uriParameters": {
+          "p_bu_id": "{{ $variables.l_bu_id }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "contract_display"
+          ]
+        }
+      }
+    },
+    "goToParentOption": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "initialString": {
+      "type": "string"
+    },
+    "Inv_Backup_Search_Obj": {
+      "type": {
+        "AR_FILE_NAME": "string",
+        "AR_INVOICE_ID": "string",
+        "AR_INVOICE_NUMBER": "string",
+        "AR_PRINT_NAME": "string",
+        "BUSINESS_UNIT": "string",
+        "CONTRACT_ID": "string",
+        "DRAFT_INVOICE_NUMBER": "string",
+        "EXPENSE_REPORTS": "string",
+        "INVOICE_ID": "string",
+        "INVOICE_MODE": "string",
+        "MAJOR_VERSION": "string",
+        "TIME_REPORT_EXPENSES": "string"
+      }
+    },
+    "INV_SEARCH_Rite_Invoice_Var_ADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getINV_SEARCH_RITE_INVOIC_BACKUP_Type"
+      }
+    },
+    "invoiceDataFilesListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_InvoiceDataFiles",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallInvoiceDataFilesResponse"
+      }
+    },
+    "invoiceDataListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_InvoiceData",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallInvoiceDataResponse"
+      }
+    },
+    "l_bu_id": {
+      "type": "string"
+    },
+    "l_contract_id": {
+      "type": "string"
+    },
+    "primaryAction": {
+      "type": "action"
+    },
+    "searchResultsDP": {
+      "type": "oj-sp/data-provider/SmartSearchAndFilterDataProvider",
+      "defaultValue": {
+        "//": "specify endpoint for search all below",
+        "endpoint": null,
+        "options": {
+          "filterCriterion": {
+            "op": "$eq",
+            "value": {
+              "filters": "{{$page.variables.allFilters}}"
+            }
+          },
+          "parameters": {
+            "smartSearchName": "<The name of the Smart Search as registered by the product team>"
+          },
+          "recentSearches": {
+            "//": "specify endpoint where recent search data is saved below",
+            "endpoint": null
+          }
+        }
+      }
+    },
+    "searchSuggestionsDP": {
+      "type": "oj-sp/data-provider/SmartSuggestionChipsDataProvider",
+      "defaultValue": {
+        "dataProviders": {
+          "recentSearches": {
+            "//": "specify endpoint for recent search below",
+            "endpoint": null,
+            "uriParameters": {
+              "smartSearchName": "<The name of the Smart Search as registered by the product team>"
+            }
+          },
+          "autocompleteSearch": {
+            "//": "specify endpoint for search all below",
+            "endpoint": null,
+            "uriParameters": {
+              "smartSearchName": "<The name of the Smart Search as registered by the product team>"
+            }
+          },
+          "suggestionFiltersSearch": {
+            "//": "specify endpoint for suggest search below",
+            "endpoint": null,
+            "uriParameters": {
+              "smartSearchName": "<The name of the Smart Search as registered by the product team>"
+            }
+          }
+        }
+      }
+    },
+    "secondaryActions": {
+      "type": "action[]"
+    },
+    "selectContextData": {
+      "type": "vb/ArrayDataProvider"
+    },
+    "selectContextItemText": {
+      "type": "string",
+      "defaultValue": "label"
+    },
+    "selectContextLabelHint": {
+      "type": "string"
+    },
+    "selectContextValue": {
+      "type": "string",
+      "defaultValue": null,
+      "persisted": "device",
+      "input": "fromUrl"
+    },
+    "selectContextValueItem": {
+      "type": "any",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chain": "updateAllFilters"
+          }
+        ]
+      }
+    },
+    "showAllTotalCount": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "suggestionFiltersDP": {
+      "type": "oj-sp/data-provider/SuggestionFiltersDataProvider",
+      "defaultValue": {
+        "//": "specify endpoint for suggest search below",
+        "endpoint": null,
+        "uriParameters": {
+          "smartSearchName": "<The name of the Smart Search as registered by the product team>"
+        }
+      }
+    }
+
+  },
+  "metadata": {
+    "businessObjectsGetallInvoiceDataFilesMetadata": {
+      "type": "vb/DynamicLayoutMetadataProviderDescriptor",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_InvoiceDataFiles",
+        "metadataPath": "items"
+      }
+    },
+    "businessObjectsGetallInvoiceDataMetadata": {
+      "type": "vb/DynamicLayoutMetadataProviderDescriptor",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_InvoiceData",
+        "metadataPath": "items"
+      }
+    }
+
+  },
+  "types": {
+    "@decorators.ALL_INVOICES_ADP": {
+      "endpoint": "getApiIntegrationV1FlowsRestRITE_INVOICE_INVOICES1_0Get_invoices",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response-_-ARInvoices[0]"
+    },
+    "@decorators.AR_INVOICES_TYPE": {
+      "endpoint": "getGLD_ITC_0001_LOV_AR_INVOICES1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response-_-ARInvoices[0]"
+    },
+    "@decorators.getallInvoiceDataFilesResponse": {
+      "endpoint": "getall_InvoiceDataFiles",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallInvoiceDataResponse": {
+      "endpoint": "getall_InvoiceData",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVARINVOICES1Response": {
+      "endpoint": "getGLD_ITC_0001_LOV_AR_INVOICES1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVBUSINESSUNITS1Response": {
+      "endpoint": "getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getGLDITC001LOVPPMCONTRACTS1Response": {
+      "endpoint": "getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "@decorators.getINV_SEARCH_RITE_INVOIC_BACKUP_Type": {
+      "endpoint": "getINV_SEARCH_RITE_INVOIC_BACKUP1_0",
+      "service": "INVOICE_FETCH_FILE",
+      "path": "response"
+    },
+    "action": {
+      "id": "string",
+      "label": "string",
+      "display": "string",
+      "icon": "string"
+    },
+    "ALL_INVOICES_ADP": {
+      "ar_invoice_number": "string",
+      "invoice_id": "string",
+      "invoice_mode": "string"
+    },
+    "AR_INVOICES_TYPE": {
+      "ar_invoice_number": "string",
+      "inv_mode": "string",
+      "invoice_id": "string"
+    },
+    "contextSelectType": {
+      "value": "string",
+      "label": "string"
+    },
+    "filterChip": {
+      "count": "number",
+      "dependencies": "string[]",
+      "filter": "string",
+      "filterLabel": "string",
+      "label": "string",
+      "value": "any"
+    },
+    "getallInvoiceDataFilesResponse": {
+      "items": "object[]"
+    },
+    "getallInvoiceDataResponse": {
+      "items": "object[]"
+    },
+    "getGLDITC001LOVARINVOICES1Response": {
+      "ARInvoices": [
+        {
+          "ar_invoice_number": "string",
+          "invoice_id": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVBUSINESSUNITS1Response": {
+      "BusinessUnits": [
+        {
+          "bu_id": "string",
+          "bu_name": "string"
+        }
+      ]
+    },
+    "getGLDITC001LOVPPMCONTRACTS1Response": {
+      "Contracts": [
+        {
+          "contract_display": "string",
+          "contract_id": "string"
+        }
+      ]
+    },
+    "getINV_SEARCH_RITE_INVOIC_BACKUP_Type": {
+      "AR_FILE_NAME": "string",
+      "AR_INVOICE_ID": "number",
+      "AR_INVOICE_NUMBER": "number",
+      "AR_PRINT_NAME": "string",
+      "BUSINESS_UNIT": "string",
+      "CONTRACT_ID": "number",
+      "DRAFT_INVOICE_NUMBER": "number",
+      "EXPENSE_REPORTS": "string",
+      "INVOICE_ID": "number",
+      "INVOICE_MODE": "string",
+      "MAJOR_VERSION": "number",
+      "TIME_REPORT_EXPENSES": "string"
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current.row}}"
+          }
+        }
+      ]
+    },
+    "buttonsetValue": {
+      "chains": [
+        {
+          "chain": "ButtonsetValueChangeChain",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "buttonsetValue2": {
+      "chains": [
+        {
+          "chain": "ButtonsetValueChangeChain1",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "ojSpGoToParent": {
+      "chains": [
+        {
+          "chain": "goToParent",
+          "parameters": {}
+        }
+      ]
+    },
+    "ojSpNavigateBack": {
+      "chains": [
+        {
+          "chain": "navigateBack",
+          "parameters": {}
+        }
+      ]
+    },
+    "ojSpSmartFiltersChangedAction": {
+      "chains": [
+        {
+          "chain": "updateAllFilters",
+          "parameters": {}
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "selectContract",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}"
+          }
+        }
+      ]
+    },
+    "tableFirstSelectedRow": {
+      "chains": [
+        {
+          "chain": "TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-buttonset-one": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-dynamic-table": {
+        "path": "oj-dynamic/table/loader"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-collection-container": {
+        "path": "oj-sp/collection-container/loader"
+      },
+      "oj-sp-empty-state": {
+        "path": "oj-sp/empty-state/loader"
+      },
+      "oj-sp-list-item-template": {
+        "path": "oj-sp/list-item-template/loader"
+      },
+      "oj-sp-smart-search-page": {
+        "path": "oj-sp/smart-search-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-74-icoSmartSearchPage48Svg"
+  }
+}

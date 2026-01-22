@@ -1,0 +1,153 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "invoiceDataListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_InvoiceData",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallInvoiceDataResponse2"
+      }
+    },
+    "kpisADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $page.variables.kpisArray }}",
+        "itemType": "object",
+        "keyAttributes": "id"
+      }
+    },
+    "kpisArray": {
+      "type": "object[]",
+      "input": "none"
+    },
+    "layout": {
+      "type": "string",
+      "defaultValue": "above-fold"
+    },
+    "primaryAction": {
+      "type": "actionType"
+    },
+    "selectedKpi": {
+      "type": "string",
+      "defaultValue": "KPI_1_id"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallGraphDataResponse": {
+      "endpoint": "getall_GraphData",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallInvoiceDataResponse": {
+      "endpoint": "getall_InvoiceData",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallInvoiceDataResponse2": {
+      "endpoint": "getall_InvoiceData",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "actionType": {
+      "label": "string",
+      "display": "string"
+    },
+    "getallGraphDataResponse": {
+      "items": [
+        {
+          "id": "number",
+          "invoiceNoBackup": "string",
+          "month": "string"
+        }
+      ]
+    },
+    "getallInvoiceDataResponse": {
+      "items": [
+        {
+          "businessUnit": "string",
+          "contract": "string",
+          "id": "number"
+        }
+      ]
+    },
+    "getallInvoiceDataResponse2": {
+      "items": [
+        {
+          "businessUnit": "string",
+          "contract": "string",
+          "expensesRecordsAvailable": "string",
+          "id": "number",
+          "timesheetsAvailable": "boolean"
+        }
+      ]
+    }
+
+  },
+  "eventListeners": {
+    "buttonsetValue": {
+      "chains": [
+        {
+          "chain": "ButtonsetValueChangeChain",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chainId": "loadKpisData",
+          "parameters": {}
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-buttonset-one": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-defer": {
+        "path": "ojs/ojdefer"
+      },
+      "oj-gantt-row": {
+        "path": "ojs/ojgantt"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-sp-dashboard-grid": {
+        "path": "oj-sp/dashboard-grid/loader"
+      },
+      "oj-sp-dashboard-landing-page": {
+        "path": "oj-sp/dashboard-landing-page/loader"
+      },
+      "oj-sp-dashboard-panel": {
+        "path": "oj-sp/dashboard-panel/loader"
+      },
+      "oj-sp-scoreboard": {
+        "path": "oj-sp/scoreboard/loader"
+      },
+      "oj-sp-smart-search": {
+        "path": "oj-sp/smart-search/loader"
+      },
+      "oj-switcher": {
+        "path": "ojs/ojswitcher"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-66-dashboardLandingPageTemplateSvg"
+  }
+}

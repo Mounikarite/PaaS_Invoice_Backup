@@ -1,0 +1,71 @@
+{
+  "layoutTypes": {
+    "businessObjects": {
+      "kind": "operationRef",
+      "serviceId": "businessObjects",
+      "operations": [
+        "getall_InvoiceDataFiles"
+      ]
+    }
+  },
+  "layouts": {
+    "isDefault": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "fileData": {
+      "type": "businessObjects",
+      "layoutType": "table",
+      "label": "FileData",
+      "rules": [
+        "isDefault"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "table",
+          "layout": {
+            "displayProperties": [
+              "invoiceNumber",
+              "businessUnit",
+              "documentAvailable",
+              "FileAttachment",
+              "documentId"
+            ]
+          },
+          "usedIn": [
+            "isDefault"
+          ]
+        }
+      },
+      "fieldTemplateMap": {
+        "FileAttachment": "downloadTemplate"
+      }
+    }
+  },
+  "templates": {
+    "downloadTemplate": {
+      "title": "downloadTemplate",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojinputtext"
+      ]
+    }
+  },
+  "eventListeners": {
+    "hyperlinkClick": {
+      "chains": [
+        {
+          "chainId": "DownloadFileAction",
+          "parameters": {
+            "current": "[[ $event.detail ]]"
+          }
+        }
+      ]
+    }
+  }
+}

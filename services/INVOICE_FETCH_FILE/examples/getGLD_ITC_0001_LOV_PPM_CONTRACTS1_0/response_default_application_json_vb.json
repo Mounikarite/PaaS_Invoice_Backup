@@ -1,0 +1,21 @@
+{
+    "RowCount": "4",
+    "Contracts": [
+        {
+            "contract_id": "300000313534871",
+            "contract_display": "OAK_Fixed_Bid_Contract : OAK_Fixed_Bid_Contract"
+        },
+        {
+            "contract_id": "300000313837899",
+            "contract_display": "OAK_PERCENT_COMPLETE : OAK_PERCENT_COMPLETE"
+        },
+        {
+            "contract_id": "300000313837927",
+            "contract_display": "OAK_PERCENT_SPENT : OAK_PERCENT_SPENT"
+        },
+        {
+            "contract_id": "300000313770582",
+            "contract_display": "OAK_RATE_BASED : OAK_RATE_BASED"
+        }
+    ]
+}

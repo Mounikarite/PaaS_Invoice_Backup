@@ -1,0 +1,1181 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v01",
+        "title": "INVOICE_FETCH_FILE",
+        "x-vb": {
+            "serviceType": "ics",
+            "transforms": {
+                "path": "../Transform.js"
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/ics"
+        }
+    ],
+    "paths": {
+        "/INVOICE_FETCH_FILE/1.0/sample": {
+            "get": {
+                "tags": [
+                    "Default Package/INVOICE_FETCH_FILE|01.00.0000",
+                    "Default Package"
+                ],
+                "operationId": "getINVOICE_FETCH_FILE1_0Sample",
+                "parameters": [
+                    {
+                        "name": "document_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+               ],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/pdf": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/streamReference"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    }
+                ]
+            }
+        },
+        "/INV_SEARCH_RITE_INVOIC_BACKUP/1.0/": {
+            "get": {
+                "tags": [
+                    "Default Package/INV_SEARCH_RITE_INVOIC_BACKUP|01.00.0000",
+                    "Default Package"
+                ],
+                "operationId": "getINV_SEARCH_RITE_INVOIC_BACKUP1_0",
+                "parameters": [
+                    {
+                        "name": "P_INVOICE_ID",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError-6"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetINV_SEARCH_RITE_INVOIC_BACKUP1_0"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getINV_SEARCH_RITE_INVOIC_BACKUP1_0/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ]
+            }
+        },
+        "/RITE_INVOICE_INVOICES/1.0/get_invoices": {
+            "get": {
+                "operationId": "getApiIntegrationV1FlowsRestRITE_INVOICE_INVOICES1_0Get_invoices",
+                "parameters": [
+                    {
+                        "name": "contract_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetApiIntegrationV1FlowsRestRITE_INVOICE_INVOICES1_0Get_invoices"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "externalValue": "./examples/getApiIntegrationV1FlowsRestRITE_INVOICE_INVOICES1_0Get_invoices/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/ic/api/integration/v2/flows/rest/project/INVOICE_BACKUP/GLD_ITC_0001_LOV_BUSINESS_UNITS/1.0/": {
+            "get": {
+                "tags": [
+                    "erp.extensions.global.gld_itc_0001/GLD_ITC_0001_LOV_BUSINESS_UNITS|01.00.0000",
+                    "erp.extensions.global.gld_itc_0001"
+                ],
+                "operationId": "getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0",
+                "parameters": [],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError-1"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetIcApiIntegrationV2FlowsRestProjectINVOICE_BACKUPGLD_ITC_0001_LOV_BUSINESS_UNITS1_0"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getGLD_ITC_0001_LOV_BUSINESS_UNITS1_0/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ],
+                "x-vb": {
+                    "queryParameters": {}
+                }
+            }
+        },
+        "/ic/api/integration/v2/flows/rest/project/INVOICE_BACKUP/GLD_ITC_0001_LOV_PPM_CONTRACTS/1.0/": {
+            "get": {
+                "tags": [
+                    "erp.extensions.global.gld_itc_0001/GLD_ITC_0001_LOV_PPM_CONTRACTS|01.00.0000",
+                    "erp.extensions.global.gld_itc_0001"
+                ],
+                "operationId": "getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0",
+                "parameters": [
+                    {
+                        "name": "p_bu_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError-2"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetGLD_ITC_0001_LOV_PPM_CONTRACTS1_0"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getGLD_ITC_0001_LOV_PPM_CONTRACTS1_0/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ]
+            }
+        },
+        "/ic/api/integration/v2/flows/rest/project/INVOICE_BACKUP/GLD_ITC_0001_LOV_PPM_INVOICES/1.0/": {
+            "get": {
+                "tags": [
+                    "erp.extensions.global.gld_itc_0001/GLD_ITC_0001_LOV_PPM_INVOICES|01.00.0000",
+                    "erp.extensions.global.gld_itc_0001"
+                ],
+                "operationId": "getGLD_ITC_0001_LOV_PPM_INVOICES1_0",
+                "parameters": [
+                    {
+                        "name": "p_contract_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError-3"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/response-wrapper-2"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ]
+            }
+        },
+        "/ic/api/integration/v2/flows/rest/project/INVOICE_BACKUP/GLD_ITC_0001_PPM_INV_ERPC/1.0/": {
+            "get": {
+                "tags": [
+                    "erp.extensions.global.gld_itc_0001/GLD_ITC_0001_PPM_INV_ERPC|01.00.0000",
+                    "erp.extensions.global.gld_itc_0001"
+                ],
+                "operationId": "getGLD_ITC_0001_PPM_INV_ERPC1_0",
+                "parameters": [
+                    {
+                        "name": "P_INVOICE_FORMAT_CODE",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "Standard"
+                        }
+                    },
+                    {
+                        "name": "P_INVOICE_ID",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "P_LE_BANK_ACCOUNT_ID",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "x-vb": {
+                            "defaultValue": "300000047314450"
+                        }
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError-5"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetGLD_ITC_0001_PPM_INV_ERPC1_0"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getGLD_ITC_0001_PPM_INV_ERPC1_0/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ]
+            }
+        },
+        "/ic/api/integration/v2/flows/rest/project/INVOICE_BACKUP/GLD_ITC_0001_LOV_AR_INVOICES/1.0": {
+            "get": {
+                "tags": [
+                    "erp.extensions.global.gld_itc_0001/GLD_ITC_0001_LOV_AR_INVOICES|01.00.0000",
+                    "erp.extensions.global.gld_itc_0001"
+                ],
+                "operationId": "getGLD_ITC_0001_LOV_AR_INVOICES1_0",
+                "parameters": [
+                    {
+                        "name": "p_contract_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Faults",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/APIInvocationError-4"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "A sample description of the Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetGLD_ITC_0001_LOV_AR_INVOICES1_0"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getGLD_ITC_0001_LOV_AR_INVOICES1_0/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2Authentication": []
+                    },
+                    {
+                        "basicAuthentication": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "APIInvocationError": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "streamReference": {
+                "type": "string"
+            },
+            "APIInvocationError-1": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper": {
+                "type": "object",
+                "required": [
+                    "BusinessUnits",
+                    "RowCount"
+                ],
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "BusinessUnits": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "bu_id": {
+                                    "type": "string"
+                                },
+                                "bu_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "bu_id",
+                                "bu_name"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "APIInvocationError-2": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper-1": {
+                "type": "object",
+                "required": [
+                    "Contracts",
+                    "RowCount"
+                ],
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "Contracts": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "contract_id": {
+                                    "type": "string"
+                                },
+                                "contract_display": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "contract_display",
+                                "contract_id"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "GetGLD_ITC_0001_LOV_PPM_CONTRACTS1_0": {
+                "type": "object",
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "Contracts": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "contract_id": {
+                                    "type": "string"
+                                },
+                                "contract_display": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "APIInvocationError-3": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper-2": {
+                "type": "object",
+                "required": [
+                    "PPMInvoices",
+                    "RowCount"
+                ],
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "PPMInvoices": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "invoice_id": {
+                                    "type": "string"
+                                },
+                                "ppm_invoice_number": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "invoice_id",
+                                "ppm_invoice_number"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "APIInvocationError-4": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper-3": {
+                "type": "object",
+                "required": [
+                    "ARInvoices",
+                    "RowCount"
+                ],
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "ARInvoices": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "invoice_id": {
+                                    "type": "string"
+                                },
+                                "ar_invoice_number": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "ar_invoice_number",
+                                "invoice_id"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "GetGLD_ITC_0001_LOV_AR_INVOICES1_0": {
+                "type": "object",
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "ARInvoices": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "invoice_id": {
+                                    "type": "string"
+                                },
+                                "ar_invoice_number": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "APIInvocationError-5": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper-4": {
+                "type": "object",
+                "required": [
+                    "dm_doc_id",
+                    "dm_version_number",
+                    "file_name",
+                    "link"
+                ],
+                "properties": {
+                    "dm_doc_id": {
+                        "type": "string"
+                    },
+                    "dm_version_number": {
+                        "type": "string"
+                    },
+                    "file_name": {
+                        "type": "string"
+                    },
+                    "link": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetGLD_ITC_0001_PPM_INV_ERPC1_0": {
+                "type": "object",
+                "properties": {
+                    "dm_doc_id": {
+                        "type": "string"
+                    },
+                    "dm_version_number": {
+                        "type": "string"
+                    },
+                    "file_name": {
+                        "type": "string"
+                    },
+                    "link": {
+                        "type": "string"
+                    }
+                }
+            },
+            "APIInvocationError-6": {
+                "type": "object",
+                "required": [
+                    "detail",
+                    "errorCode",
+                    "errorDetails",
+                    "title",
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "errorCode": {
+                        "type": "string"
+                    },
+                    "errorDetails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "errorPath": {
+                                    "type": "string"
+                                },
+                                "errorCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "errorCode",
+                                "errorPath",
+                                "instance",
+                                "title",
+                                "type"
+                            ]
+                        },
+                        "minItems": 1
+                    }
+                }
+            },
+            "response-wrapper-5": {
+                "type": "object",
+                "required": [
+                    "AR_FILE_NAME",
+                    "AR_INVOICE_ID",
+                    "AR_INVOICE_NUMBER",
+                    "AR_PRINT_NAME",
+                    "BUSINESS_UNIT",
+                    "CONTRACT_ID",
+                    "DRAFT_INVOICE_NUMBER",
+                    "EXPENSE_REPORTS",
+                    "INVOICE_ID",
+                    "INVOICE_MODE",
+                    "MAJOR_VERSION",
+                    "TIME_REPORT_EXPENSES"
+                ],
+                "properties": {
+                    "INVOICE_ID": {
+                        "type": "number"
+                    },
+                    "CONTRACT_ID": {
+                        "type": "number"
+                    },
+                    "MAJOR_VERSION": {
+                        "type": "number"
+                    },
+                    "BUSINESS_UNIT": {
+                        "type": "string"
+                    },
+                    "DRAFT_INVOICE_NUMBER": {
+                        "type": "number"
+                    },
+                    "AR_INVOICE_NUMBER": {
+                        "type": "number"
+                    },
+                    "AR_INVOICE_ID": {
+                        "type": "number"
+                    },
+                    "INVOICE_MODE": {
+                        "type": "string"
+                    },
+                    "AR_FILE_NAME": {
+                        "type": "string"
+                    },
+                    "AR_PRINT_NAME": {
+                        "type": "string"
+                    },
+                    "TIME_REPORT_EXPENSES": {
+                        "type": "string"
+                    },
+                    "EXPENSE_REPORTS": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetINV_SEARCH_RITE_INVOIC_BACKUP1_0": {
+                "type": "object",
+                "properties": {
+                    "INVOICE_ID": {
+                        "type": "integer"
+                    },
+                    "CONTRACT_ID": {
+                        "type": "integer"
+                    },
+                    "MAJOR_VERSION": {
+                        "type": "integer"
+                    },
+                    "BUSINESS_UNIT": {
+                        "type": "string"
+                    },
+                    "DRAFT_INVOICE_NUMBER": {
+                        "type": "integer"
+                    },
+                    "AR_INVOICE_NUMBER": {
+                        "type": "integer"
+                    },
+                    "AR_INVOICE_ID": {
+                        "type": "integer"
+                    },
+                    "INVOICE_MODE": {
+                        "type": "string"
+                    },
+                    "AR_FILE_NAME": {
+                        "type": "string"
+                    },
+                    "AR_PRINT_NAME": {
+                        "type": "string"
+                    },
+                    "TIME_REPORT_EXPENSES": {
+                        "type": "string"
+                    },
+                    "EXPENSE_REPORTS": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetApiIntegrationV1FlowsRestRITE_INVOICE_INVOICES1_0Get_invoices": {
+                "type": "object",
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "ARInvoices": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "invoice_id": {
+                                    "type": "string"
+                                },
+                                "ar_invoice_number": {
+                                    "type": "string"
+                                },
+                                "invoice_mode": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "GetIcApiIntegrationV2FlowsRestProjectINVOICE_BACKUPGLD_ITC_0001_LOV_BUSINESS_UNITS1_0": {
+                "type": "object",
+                "properties": {
+                    "RowCount": {
+                        "type": "string"
+                    },
+                    "BusinessUnits": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "bu_id": {
+                                    "type": "string"
+                                },
+                                "bu_name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
